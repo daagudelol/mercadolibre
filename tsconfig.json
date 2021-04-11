@@ -2,6 +2,15 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
+    "paths": {
+      "@environments/*" : ["src/environments/*"],
+      "@app-core/*" : ["src/app/core/*"],
+      "@app-main/*" : ["src/app/main/*"],
+      "@shared/*" : ["src/app/shared/*"],
+      "@services/*" : ["src/app/services/*"],
+      "@models/*" : ["src/app/models/*"],
+      "@assets/*" : ["src/assets/*"]
+    },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
