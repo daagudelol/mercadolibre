@@ -1,30 +1,46 @@
-<section *ngFor="let item of products">
-  <div (click)="seeDetail(item.id)" 
-       class="card" fxLayout="row" 
-       fxLayoutAlign="start center"
-       fxLayoutGap="25px">
-    <div class="card__image" fxFlex="15" fxLayout="column" fxLayoutAlign="center center">
-      <img [src]="item.thumbnail" alt="" />
-    </div>
+
+  <section *ngFor="let item of products">
     <div
-      class="card__description"   
-      fxFlex="85"
-      fxLayout="column"
+      (click)="seeDetail(item.id)"
+      class="card"
+      fxLayout="row"
+      fxLayoutAlign="start center"
+      fxLayoutGap="25px"
     >
-      <div fxLayout="row" fxFlex="100" fxLayoutAlign="space-between center">
-        <div fxLayout="row" 
-             class="card__description--price"            
-             fxLayoutAlign="space-between center">
-            <h1>{{item.prices.prices[0].amount | currency : 'USD' : 'symbol' : '1.0-0'}}</h1>
-            <img *ngIf="item.shipping.free_shipping" src="../../../../../assets/images/ic_shipping.png" />
+      <div
+        class="card__image"
+        fxFlex="15"
+        fxLayout="column"
+        fxLayoutAlign="center center"
+      >
+        <img [src]="item.thumbnail" alt="" />
+      </div>
+      <div class="card__description" fxFlex="85" fxLayout="column">
+        <div fxLayout="row" fxFlex="100" fxLayoutAlign="space-between center">
+          <div
+            fxLayout="row"
+            class="card__description--price"
+            fxLayoutAlign="space-between center"
+          >
+            <h1>
+              {{
+                item.prices.prices[0].amount | currency: "USD":"symbol":"1.0-0"
+              }}
+            </h1>
+            <img
+              *ngIf="item.shipping.free_shipping"
+              src="../../../../../assets/images/ic_shipping.png"
+            />
+          </div>
+          <div>
+            <small>{{ item.address.city_name }}</small>
+          </div>
         </div>
         <div>
-            <small>{{item.address.city_name}}</small>
+          <p>{{ item.title }}</p>
         </div>
       </div>
-      <div>
-        <p>{{item.title}}</p>
-      </div>
     </div>
-  </div>
-</section>
+  </section>
+
+

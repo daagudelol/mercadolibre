@@ -44,8 +44,8 @@ export class HttpService {
   }  
 
   // Error handler
-  private handleError(error) {
-    Swal.fire('!Error!', error, 'error')
+  private handleError(error) {    
+    Swal.fire('!Error!', error.error.message, 'error')
     return throwError(error);
   }
 }

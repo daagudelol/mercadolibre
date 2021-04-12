@@ -30,9 +30,10 @@ export class ItemsComponent implements OnInit {
     this.getProducts(product);
     // Subscribe to search status changes
     this.searchState.getSearchText().subscribe(data => {
-      console.log('search', data)
-      if(!_isEmpty(data))
-      this.getProducts(data)
+      if(!_isEmpty(data)){
+        this.getProducts(data)
+      }
+      
     })
   }
 
@@ -42,8 +43,7 @@ export class ItemsComponent implements OnInit {
       map((result: any) => result.map(person => ({
         ...person,
         author: this.author
-      }))),
-      tap(tap => console.log('tap', tap))
+      })))
     )
   }
 

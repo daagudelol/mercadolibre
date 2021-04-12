@@ -36,11 +36,9 @@ export class ItemComponent implements OnInit {
         ...result,
         author: this.author,
         imagen: result.pictures[0].secure_url
-      })), 
-      // tap(tap => console.log('get product', tap)) 
+      }))
     ).subscribe( data => {
       this.product = [data];
-      console.log('get product', this.product)
       this.image = this.product[0].pictures[0].secure_url;
       this.condition = this.product[0].condition === 'new'? 'Nuevo':'Usado';
       this.sold = this.product[0].sold_quantity;
@@ -52,10 +50,8 @@ export class ItemComponent implements OnInit {
       map((result: any) => ({
         ...result,
         author: this.author
-      })), 
-      // tap(tap => console.log('get description', tap)) 
-    ).subscribe( data =>{
-      console.log('get description', data)
+      }))
+    ).subscribe( data =>{      
       const descriptionArray = [data];
       this.description = descriptionArray[0].plain_text;
     });
