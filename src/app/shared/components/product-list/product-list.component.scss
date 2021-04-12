@@ -1,0 +1,19 @@
+.card{
+    min-height: 150px;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+    display: block;
+    cursor: pointer;
+    &__image{
+        height: 150px;
+    }
+    &__description{
+        padding-top: 20px;
+        &--price{
+            h1{
+                margin: 0 20px 0 0;
+            }
+        }
+
+    }
+}
