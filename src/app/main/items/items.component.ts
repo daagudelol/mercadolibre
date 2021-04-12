@@ -34,7 +34,7 @@ export class ItemsComponent implements OnInit {
     this.searchState.getSearchText().subscribe(data => {
       if(!_isEmpty(data)){
         if(data.indexOf('MLA') > -1){
-          this.seeDetail(data)
+          this.redirectTo(data)
         }else{
           this.getProducts(data)
         }
@@ -52,6 +52,11 @@ export class ItemsComponent implements OnInit {
         author: this.author
       })))
     )
+  }
+
+  redirectTo(urid:string){
+    this.router.navigateByUrl('api/items', {skipLocationChange: true}).then(()=>
+    this.router.navigate(['api/items', urid]));
   }
 
   public seeDetail(id) {
