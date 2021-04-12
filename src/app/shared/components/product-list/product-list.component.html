@@ -1,5 +1,8 @@
 <section *ngFor="let item of products">
-  <div (click)="seeDetail(item.id)" class="card" fxLayout="row" fxLayoutAlign="start start">
+  <div (click)="seeDetail(item.id)" 
+       class="card" fxLayout="row" 
+       fxLayoutAlign="start center"
+       fxLayoutGap="25px">
     <div class="card__image" fxFlex="15" fxLayout="column" fxLayoutAlign="center center">
       <img [src]="item.thumbnail" alt="" />
     </div>

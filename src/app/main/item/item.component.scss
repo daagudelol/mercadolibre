@@ -1,0 +1,14 @@
+.product{
+    &__photo{
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.main{
+    &__content{
+        background: #fff;
+        padding: 10px;
+        border-radius: 5px;
+    }
+}

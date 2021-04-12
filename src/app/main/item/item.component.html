@@ -1,1 +1,24 @@
-<p>item works!</p>
+<div class="main__content" fxLayout="row" fxLayoutGap="30px" *ngIf="product">
+    <div fxFlex="70" class="product">
+        <div >
+            <div class="product__photo">
+                <img [src]="image" alt="">
+            </div>
+            <div class="product__description">
+                <h2>Descripción del producto</h2>
+                <p>{{description}}</p>
+            </div>
+        </div>
+    </div>
+    <div fxFlex="30">
+        <p>{{condition}} - {{sold}} Vendidos </p>
+        <h2>{{product[0].title}}</h2>
+        <h1>{{product[0].base_price | currency}}</h1>
+        <button
+            class="btn btn-info w-100"
+            type="button"
+            aria-label="Sold"
+
+        >Comprar</button>
+    </div>
+</div>

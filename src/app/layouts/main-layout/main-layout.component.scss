@@ -1,0 +1,32 @@
+.navbar {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    &.fixed-top {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
+}
+
+.main{
+    &__content{
+        background: #fff;
+        padding: 10px;
+        border-radius: 5px;
+    }
+}
+
+
+.bg-dark {
+    background-color: #212529!important;
+}
+.bg-yellow {
+    background-color: #FFE600!important;
+}

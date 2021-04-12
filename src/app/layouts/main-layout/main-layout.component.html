@@ -1,11 +1,16 @@
-<header class="navbar sticky-top">  
-  <app-global-search></app-global-search>
+<header class="navbar fixed-top bg-yellow">  
+  <div fxLayout="row" fxLayoutAlign="start center" class="container">
+      <div fxFlex="7" fxLayoutAlign="start center" aria-label="logo">
+        <img src="../../../../../assets/images/Logo_ML.png" />
+      </div>
+      <div fxFlex="93">
+          <app-global-search></app-global-search>
+      </div>
+  </div>
 </header>
 
-<div class="main">
-  <div class="row">
-    <main class="main__content">
-        <router-outlet></router-outlet>
-    </main>
-  </div>
-</div>
+
+<main class="container">
+    <router-outlet></router-outlet>
+</main>
+  

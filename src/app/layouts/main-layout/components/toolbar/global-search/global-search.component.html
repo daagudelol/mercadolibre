@@ -1,13 +1,18 @@
-<input
-    class="form-control w-100"
-    type="text"
-    placeholder="Search"
-    aria-label="Search"
-  />
-  <button
-    class=""
-    type="button"
-    aria-label="Toggle navigation"
-  >
-    <span class="">icon search</span>
-  </button>
+<div fxLayout="row" fxLayoutAlign="center center">
+    <input
+        class="form-control w-100 nb-right"
+        type="text"
+        #input
+        (keyup.enter)="search(input.value)"
+        placeholder="Nunca dejes de buscar"
+        aria-label="Search"
+      />
+      <button
+        class="btn btn-gray nb-left"
+        type="button"
+        aria-label="Toggle navigation"
+        (click)="search(input.value)"
+      >
+        <img src="../../../../../assets/images/ic_Search.png" />
+      </button>
+</div>

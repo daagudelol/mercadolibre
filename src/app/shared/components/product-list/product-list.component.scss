@@ -6,6 +6,10 @@
     cursor: pointer;
     &__image{
         height: 150px;
+        img{
+            width: 80%;
+            object-fit: cover;
+        }
     }
     &__description{
         padding-top: 20px;
