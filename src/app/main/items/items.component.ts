@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute} from '@angular/router';
 import { SearchService } from '@services/search/search.service';
 import { SharedStatesService } from '@services/searchState/search-state.service';
 import { map, take, tap } from 'rxjs/operators';
 import _isEmpty from 'lodash/isEmpty';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-items',
   templateUrl: './items.component.html',
@@ -20,7 +21,8 @@ export class ItemsComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private searchService: SearchService,
-    private searchState: SharedStatesService
+    private searchState: SharedStatesService,
+    private router: Router
   ) {
     
   }
@@ -31,7 +33,12 @@ export class ItemsComponent implements OnInit {
     // Subscribe to search status changes
     this.searchState.getSearchText().subscribe(data => {
       if(!_isEmpty(data)){
-        this.getProducts(data)
+        if(data.indexOf('MLA') > -1){
+          this.seeDetail(data)
+        }else{
+          this.getProducts(data)
+        }
+        
       }
       
     })
@@ -45,6 +52,10 @@ export class ItemsComponent implements OnInit {
         author: this.author
       })))
     )
+  }
+
+  public seeDetail(id) {
+    this.router.navigate(['api/items', id]);
   }
 
 }
