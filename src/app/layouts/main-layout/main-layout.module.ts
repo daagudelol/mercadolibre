@@ -15,8 +15,10 @@ import { httpInterceptorProviders } from '@app-core/interceptors';
     CommonModule,
     SharedModule,
     MainRoutingModule,
-    NgxSpinnerModule,
-    /* httpInterceptorProviders */
+    NgxSpinnerModule    
+  ],
+  providers: [
+    httpInterceptorProviders
   ]
 })
 export class MainLayoutModule { }

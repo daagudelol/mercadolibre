@@ -1,16 +1,25 @@
-<header class="navbar fixed-top bg-yellow">  
+<header class="navbar fixed-top bg-yellow">
   <div fxLayout="row" fxLayoutAlign="start center" class="container">
-      <div fxFlex="7" fxLayoutAlign="start center" aria-label="logo">
-        <img src="../../../../../assets/images/Logo_ML.png" />
-      </div>
-      <div fxFlex="93">
-          <app-global-search></app-global-search>
-      </div>
+    <div fxFlex="7" fxLayoutAlign="start center" aria-label="logo">
+      <img src="../../../../../assets/images/Logo_ML.png" />
+    </div>
+    <div fxFlex="93">
+      <app-global-search></app-global-search>
+    </div>
   </div>
 </header>
 
-
 <main class="container">
-    <router-outlet></router-outlet>
+  <router-outlet></router-outlet>
 </main>
-  
+
+<!-- SPINER -->
+<ngx-spinner
+  name="globalLoading"
+  bdColor="rgba(255, 255, 255, 0.8)"
+  size="medium"
+  color="#FFE600"
+  type="ball-clip-rotate"
+  fullScreen="true"
+>
+</ngx-spinner>
